@@ -9,7 +9,7 @@ public class Shooting : MonoBehaviour {
 	public GameObject bulletSpawn02;
 
 	//Gun properties
-	float fireRate = 0.5f;
+	float fireRate = 0.1f;
 	float fireTimer = 0;
 
 	//mouseposition is used to aim crosshair
@@ -72,11 +72,11 @@ public class Shooting : MonoBehaviour {
 		if (Input.GetButton ("Fire1") && fireTimer >= fireRate) {
 
 			//prefab shooting 
-			//Instantiate(bullet, bulletSpawn01.transform.position, gunAim.transform.rotation); 
-			//Instantiate(bullet, bulletSpawn02.transform.position, gunAim.transform.rotation); 
+			Instantiate(bullet, bulletSpawn01.transform.position, gunAim.transform.rotation); 
+			Instantiate(bullet, bulletSpawn02.transform.position, gunAim.transform.rotation); 
 
 			//fire a ray to check for collisions
-			Rayshoot ();
+			//Rayshoot ();
 
 			//reset timer
 			fireTimer = 0;
